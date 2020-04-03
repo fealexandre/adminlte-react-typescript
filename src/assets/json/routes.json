@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Usuários",
+    "path": "#users",
+    "icon": "users"
+  },
+  {
+    "name": "Quiz",
+    "path": "#quiz",
+    "icon": "question"
+  }
+]

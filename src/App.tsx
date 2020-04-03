@@ -14,6 +14,9 @@ import { ApplicationState } from './store';
 import AuthLoad from './components/Auth/AuthLoad';
 
 import { loadMe } from 'src/store/ducks/users/actions';
+import Header from './components/Templates/Header/Header';
+import Sidebar from './components/Templates/Sidebar/Sidebar';
+import Footer from './components/Templates/Footer/Footer';
 
 const App: FunctionComponent = () => {
   const dispatch = useDispatch();
@@ -34,10 +37,19 @@ const App: FunctionComponent = () => {
 
   if (isAuthenticated) {
     return (
-      <Switch>
-        <Route path="/home" component={Home} />
-        <Redirect from="*" to="/home" />
-      </Switch>
+      <div className="wrapper">
+        <Header />
+        <Sidebar />
+        <div className="content-wrapper">
+          <div className="content">
+            <Switch>
+              <Route path="/home" component={Home} />
+              <Redirect from="*" to="/home" />
+            </Switch>
+          </div>
+        </div>
+        <Footer />
+      </div>
     );
   } else {
     return (
